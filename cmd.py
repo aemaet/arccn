@@ -7,6 +7,9 @@ class Cmd():
 		self.startState = None
 		self.endStates = []
 
+	def __str__(self):
+		print self.time
+
 	def add_state(self, name, instruction, transition, end_state=0):
 		state = {'instruction': instruction,
 				 'transition': transition}

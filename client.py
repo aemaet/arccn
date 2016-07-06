@@ -5,12 +5,13 @@ from cmd import Cmd
 
 def runthread(start,cmd):
 	print "started"
-	while True:
+	while cmd:
 		tmp = int(time.time() - start)
-		print tmp
-		if int(time.time() - start) >= cmd.time: 
-			cmd.run()
-			break
+		print tmp, cmd[0].time
+		if int(time.time() - start) >= cmd[0].time: 
+			cmd[0].run()
+			cmd.pop(0)
+			continue
 		time.sleep(1)
 
 HOST = ''   
@@ -32,19 +33,32 @@ print 'Socket bind complete'
 
 s.listen(10)
 print 'Socket now listening'
-start = time.time()
-schedule = {}
-threads = []
-
-while 1:
+while True:
+	s.settimeout(None)
 	conn, addr = s.accept()
-	data = conn.recv(BUFFER_SIZE)
-	if data: 
-		cmd = pickle.loads(data)
-		t = threading.Thread(target=runthread,args=(start,cmd))
-		t.start()
-		threads.append(t)
-		print len(threads)
+	start = time.time()
+	cmd = []
+	while True:
+		data = conn.recv(BUFFER_SIZE)
+		if data:
+		#	print 'gottem' 
+			cmd.append(pickle.loads(data))
+		#t.start()
+		#threads.append(t)
+		#print len(threads)
+		try: 
+		#	print 'fetching'
+			s.settimeout(5.0)
+			conn, addr = s.accept()
+		#	print 'setting'
+		except socket.timeout:
+		#	print 'timeout'
+			break
+	cmd.sort(key=lambda x: x.time)
+	print cmd
+	t = threading.Thread(target=runthread,args=(start,cmd))
+	t.start()
+	t.join()
 	'''
 	to_remove = [] 
 	curr_time = time.time() - start
