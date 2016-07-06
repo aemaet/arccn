@@ -60,11 +60,9 @@ class App():
 	def make_message(self,cmd,time):
 		cmd.time = time 
 		t = pickle.dumps(cmd)
-		#newc = jsonpickle.decode(t)
-		#newc.run()
 		return t
 
-	def run(self, tasks): #task = {ip,port}
+	def run(self, tasks): 
 		threads = []
 		for task in tasks:
 			t = threading.Thread(target=self.call,args=(task.address,task.cmd, task.time))

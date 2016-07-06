@@ -4,10 +4,14 @@ import subprocess
 from cmd import Cmd
 
 def runthread(start,cmd):
+	print "started"
 	while True:
-		if int(time.time() - start) > cmd.time: 
+		tmp = int(time.time() - start)
+		print tmp
+		if int(time.time() - start) >= cmd.time: 
 			cmd.run()
 			break
+		time.sleep(1)
 
 HOST = ''   
 PORT = 8888 
@@ -36,8 +40,11 @@ while 1:
 	conn, addr = s.accept()
 	data = conn.recv(BUFFER_SIZE)
 	if data: 
-		t = pickle.loads(data)
-		runthread(start,t)
+		cmd = pickle.loads(data)
+		t = threading.Thread(target=runthread,args=(start,cmd))
+		t.start()
+		threads.append(t)
+		print len(threads)
 	'''
 	to_remove = [] 
 	curr_time = time.time() - start
