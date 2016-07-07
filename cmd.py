@@ -1,4 +1,4 @@
-import time, socket, threading, random, pickle
+import time, socket, threading, random, pickle, subprocess
 
 class Cmd():
 	def __init__(self,time=0):
@@ -29,6 +29,9 @@ class Cmd():
 			raise  InitializationError("at least one state must be an end_state")
 	
 		while True:
+			subprocess.Popen(state['instruction'].split())
+			if self.startState in self.endStates: 
+				break
 			trigger = random.choice(['a','b'])
 			print trigger
 			try:
