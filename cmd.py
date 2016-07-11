@@ -1,4 +1,4 @@
-import time, socket, threading, random, pickle, subprocess
+import time, socket, threading, random, pickle, subprocess, datetime
 
 class Cmd():
 	def __init__(self,time=0):
@@ -29,7 +29,12 @@ class Cmd():
 			raise  InitializationError("at least one state must be an end_state")
 	
 		while True:
-			subprocess.Popen(state['instruction'].split())
+			proc = subprocess.Popen(state['instruction'].split(),stdout=subprocess.PIPE)
+			output = proc.stdout.read()
+			with open("log.txt", "a") as text_file:
+				text_file.write(datetime.datetime.today().ctime())
+				text_file.write(output + '\n')
+			print output
 			if self.startState in self.endStates: 
 				break
 			trigger = random.choice(['a','b'])

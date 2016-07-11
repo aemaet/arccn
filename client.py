@@ -2,7 +2,7 @@ import socket, pickle, time, threading
 import sys
 import subprocess
 from cmd import Cmd
-
+'''
 def runthread(start,cmd):
 	print "started"
 	while cmd:
@@ -12,7 +12,13 @@ def runthread(start,cmd):
 			cmd[0].run()
 			cmd.pop(0)
 			continue
-		time.sleep(1)
+	time.sleep(1)
+'''
+def runthread(start,cmd):
+	wait = cmd.time - int(time.time() - start)
+	print wait
+	if wait > 0: time.sleep(wait)
+	cmd.run()
 
 HOST = ''   
 PORT = 8888 
@@ -56,31 +62,10 @@ while True:
 			break
 	cmd.sort(key=lambda x: x.time)
 	print cmd
-	t = threading.Thread(target=runthread,args=(start,cmd))
-	t.start()
-	t.join()
-	'''
-	to_remove = [] 
-	curr_time = time.time() - start
-	
-	print int(curr_time)
-	for k in schedule:
-		if int(curr_time) >= int(k):
-			threads.append(threading.Thread(target=schedule[k].run()))
-			to_remove.append(k)
-	for k in to_remove:
-		schedule.pop(k)
-	print len(schedule)
-	#process = subprocess.Popen('iperf -c localhost'.split())
-	print 'Connected with ' + addr[0] + ':' + str(addr[1])
-	data = conn.recv(BUFFER_SIZE)
-
-	if data: 
-		t = pickle.loads(data)
-		schedule[t.time] = t
-	#todo = collections.OrderedDict(sorted(schedule.items()))
-	time.sleep(1)
-	'''
+	for c in cmd:
+		t = threading.Thread(target=runthread,args=(start,c))
+		t.start()
+		threads.append(t)
 #print "received data:", data
 
 s.close()
