@@ -1,0 +1,11 @@
+name: zoo/Ai3.graphml; backbone nodes: 10
+Node 0, type: bcube, params: (1, (2, 0)), nodes: 8
+Node 1, type: star, params: (4, (2, 0)), nodes: 6
+Node 2, type: ftree, params: (4, (2, 0)), nodes: 74
+Node 3, type: bcube, params: (4, (2, 0)), nodes: 8
+Node 4, type: ftree, params: (4, (2, 0)), nodes: 74
+Node 5, type: ftree, params: (2, (2, 0)), nodes: 16
+Node 6, type: star, params: (5, (2, 0)), nodes: 8
+Node 7, type: star, params: (7, (2, 0)), nodes: 14
+Node 8, type: bcube, params: (7, (4, 0)), nodes: 12
+Node 9, type: ftree, params: (2, (4, 0)), nodes: 16

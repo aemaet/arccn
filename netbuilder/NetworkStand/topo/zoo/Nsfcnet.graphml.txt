@@ -1,0 +1,10 @@
+name: zoo/Nsfcnet.graphml; backbone nodes: 10
+Node 0, type: star, params: (6, ()), nodes: 14
+Node 2, type: star, params: (6, ()), nodes: 8
+Node 3, type: ftree, params: (4, ()), nodes: 74
+Node 4, type: ftree, params: (4, ()), nodes: 74
+Node 5, type: bcube, params: (4, (3, 1)), nodes: 32
+Node 6, type: ftree, params: (4, (3, 1)), nodes: 74
+Node 7, type: bcube, params: (4, (2, 1)), nodes: 18
+Node 8, type: ftree, params: (4, (2, 1)), nodes: 74
+Node 9, type: ftree, params: (2, (2, 1)), nodes: 16

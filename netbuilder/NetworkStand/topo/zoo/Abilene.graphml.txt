@@ -1,0 +1,12 @@
+name: zoo/Abilene.graphml; backbone nodes: 11
+Node 0, type: bcube, params: (1, (6, 0)), nodes: 16
+Node 1, type: star, params: (7, (6, 0)), nodes: 14
+Node 2, type: bcube, params: (7, (3, 0)), nodes: 10
+Node 3, type: star, params: (3, (3, 0)), nodes: 8
+Node 4, type: star, params: (6, (3, 0)), nodes: 7
+Node 5, type: ftree, params: (4, (3, 0)), nodes: 74
+Node 6, type: bcube, params: (4, (5, 0)), nodes: 14
+Node 7, type: ftree, params: (2, (5, 0)), nodes: 16
+Node 8, type: star, params: (4, (5, 0)), nodes: 10
+Node 9, type: ftree, params: (2, (5, 0)), nodes: 16
+Node 10, type: star, params: (4, (5, 0)), nodes: 7

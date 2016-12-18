@@ -1,0 +1,13 @@
+name: zoo/JanetExternal.graphml; backbone nodes: 12
+Node 0, type: ftree, params: (4, ()), nodes: 74
+Node 1, type: ftree, params: (4, ()), nodes: 74
+Node 2, type: star, params: (3, ()), nodes: 6
+Node 3, type: ftree, params: (2, ()), nodes: 16
+Node 4, type: star, params: (4, ()), nodes: 8
+Node 5, type: star, params: (6, ()), nodes: 10
+Node 6, type: bcube, params: (6, (5, 0)), nodes: 14
+Node 7, type: bcube, params: (6, (6, 1)), nodes: 98
+Node 8, type: bcube, params: (6, (6, 0)), nodes: 16
+Node 9, type: star, params: (5, (6, 0)), nodes: 11
+Node 10, type: star, params: (7, (6, 0)), nodes: 12
+Node 11, type: ftree, params: (4, (6, 0)), nodes: 74

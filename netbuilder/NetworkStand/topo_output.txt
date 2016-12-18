@@ -1,0 +1,4 @@
+name: zoo/Atmnet.graphml; backbone nodes: 3
+Node 0, type: star, params: (6, (2, 0)), nodes: 13
+Node 1, type: bcube, params: (6, (5, 1)), nodes: 72
+Node 2, type: ftree, params: (2, (5, 1)), nodes: 16

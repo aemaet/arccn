@@ -1,0 +1,12 @@
+name: zoo/Sprint.graphml; backbone nodes: 11
+Node 0, type: star, params: (5, ()), nodes: 10
+Node 1, type: star, params: (5, ()), nodes: 8
+Node 2, type: bcube, params: (5, (4, 1)), nodes: 50
+Node 3, type: star, params: (6, (4, 1)), nodes: 10
+Node 4, type: star, params: (6, (4, 1)), nodes: 10
+Node 5, type: star, params: (6, (4, 1)), nodes: 12
+Node 6, type: ftree, params: (2, (4, 1)), nodes: 16
+Node 7, type: star, params: (6, (4, 1)), nodes: 8
+Node 8, type: bcube, params: (6, (2, 1)), nodes: 18
+Node 9, type: bcube, params: (6, (3, 0)), nodes: 10
+Node 10, type: bcube, params: (6, (2, 0)), nodes: 8
